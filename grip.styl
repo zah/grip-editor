@@ -1,0 +1,374 @@
+*
+  margin 0
+  padding 0
+
+  font-family Consolas
+
+box-direction(direction)
+  -webkit-box-direction direction
+
+box-orient(orient)
+  -webkit-box-orient orient
+
+box()
+  display -webkit-box
+
+box-flex(value)
+  -webkit-box-flex value
+
+body, html
+  height 100%
+  width 100%
+
+body
+  // force 3D acceleration    
+  -webkit-transform: translateZ(0)
+  box()
+  box-orient vertical
+
+HEADER_H = 46px
+TABBAR_H = 30px
+STATUS_H = 10px
+CONSOLE_H = 30px
+
+MENU_W = 280px
+WIN_BTNS_W = 40px
+
+#header
+  box-flex 0
+  box()
+  box-orient horizontal
+  
+  width 100%
+  height HEADER_H
+
+  background #111
+
+  #menu
+    box-flex 0
+    width MENU_W
+
+  #tools
+    box-flex 0
+    width (MENU_W - WIN_BTNS_W)
+
+  #winBtns
+    box-flex 0
+    width WIN_BTNS_W
+
+  #console
+    box-flex 1
+    height CONSOLE_H
+    margin-top ((HEADER_H - CONSOLE_H) / 2)
+
+    input
+      box-sizing border-box
+      width 100%
+      height 100%
+      padding-left 5px
+      font-size 17px
+
+  > *
+    height 100%
+
+#tabbar
+  box-flex 0
+  
+  width 100%
+  height TABBAR_H
+
+  background #ccc
+  border-bottom solid 1px #999
+
+  position relative
+
+  TAB_PADDING_BOTTOM = 5px
+
+  ul
+    position absolute
+    
+    left 256px
+    bottom TAB_PADDING_BOTTOM - 1
+    
+    list-style-type none
+
+    li
+      font-size 13px
+      display inline
+      margin-right 4px
+      padding TAB_PADDING_BOTTOM 7px
+      border 1px solid #999
+      background #e2e2e2
+
+      &.active
+        font-weight bold
+        background white
+        border-bottom-color white
+
+#mainarea
+  box-flex 100
+  width 100%
+  
+  //box()
+  //box-orient horizontal
+
+  #aceedit
+    // width 100%
+    // box-flex 1
+    // height 500px
+
+  .ui-layout-west
+    background #333
+  
+  .ui-layout-resizer
+    background #333
+
+  .ui-layout-toggler
+    background #999
+
+  overflow visible
+
+#projectTree
+  padding  15px
+
+#editor
+  width 100%
+  height 100%
+
+#statusbar
+  box-flex 0
+  
+  height 20px
+
+  background #ccc
+
+// Code Mirror Style
+.CodeMirror
+  border none
+  font-size 12px
+
+.CodeMirror-gutter 
+  background: #666
+  min-width 3.5em
+  padding-left 5px
+  padding-right 10px
+  border none
+  box-sizing border-box
+  box-shadow 0px 0px 7px rgba(0, 0, 0, 0.5)
+  
+.CodeMirror-gutter-text
+  color #ccc
+
+.CodeMirror-scroll
+  height 100%
+
+.CodeMirror-lines > div
+  padding-left 5px
+  
+pre.CodeMirror-cursor
+  margin-left 5px
+
+// Ace Theme
+.ace-grip 
+  .ace_editor
+    border: 2px solid rgb(159, 159, 159)
+
+    &.ace_focus
+      border: 2px solid #327fbd
+
+  .ace_gutter
+    background: #666
+    color #ccc
+    // font-size 17px
+    box-shadow 0px 0px 7px rgba(0, 0, 0, 0.5)
+
+  .ace_print_margin
+    width: 1px
+    background: #ebebeb
+
+  .ace_fold
+    background-color: rgb(60, 76, 114)
+
+  .ace_text-layer
+    //
+
+  .ace_content
+    padding-left 5px
+
+  .ace_cursor
+    border-left: 2px solid black
+
+  .ace_line
+    .ace_storage, .ace_keyword, .ace_variable
+      color: rgb(127, 0, 85)
+
+    .ace_constant.ace_buildin
+      color: rgb(88, 72, 246)
+
+    .ace_constant.ace_library
+      color: rgb(6, 150, 14)
+
+    .ace_function
+      color: rgb(60, 76, 114)
+
+    .ace_string
+      color: rgb(42, 0, 255)
+
+    .ace_comment
+      color: rgb(63, 127, 95)
+
+    .ace_comment.ace_doc
+      color: rgb(63, 95, 191)
+
+    .ace_comment.ace_doc.ace_tag
+      color: rgb(127, 159, 191)
+
+    .ace_constant.ace_numeric
+      //
+
+    .ace_tag
+      color: rgb(63, 127, 127)
+
+    .ace_type
+      color: rgb(127, 0, 127)
+
+    .ace_xml_pe
+      color: rgb(104, 104, 91)
+
+    .ace_meta.ace_tag
+      color:rgb(63, 127, 127)
+
+  .ace_marker-layer
+    .ace_selection
+      background: rgb(181, 213, 255)
+
+    .ace_bracket
+      margin: -1px 0 0 -1px
+      border: 1px solid rgb(192, 192, 192)
+
+  .ace_entity.ace_other.ace_attribute-name
+    color: rgb(127, 0, 127)
+
+  .ace_marker-layer 
+    .ace_step
+      background: rgb(255, 255, 0)
+
+    .ace_active_line
+      background: rgb(232, 242, 254)
+
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu *
+  margin      0
+  padding     0
+  list-style  none
+
+.sf-menu
+  line-height:  1.0;
+
+  MENU_WIDTH = 9em
+
+  ul
+    position   absolute;
+    top       -999em;
+    width      MENU_WIDTH
+
+    li
+      box-sizing border-box
+      width:    100%
+
+  li
+    float      left;
+    position   relative
+
+  a
+    display    block;
+    position   relative;
+
+  li:hover ul,
+  li.sfHover ul
+    left      0
+    top       2.5em // match top ul list item height
+    z-index   99
+
+  li:hover li ul,
+  li.sfHover li ul,
+  li li:hover li ul,
+  li li.sfHover li ul
+    top:      -999em
+
+  li li:hover ul,
+  li li.sfHover ul,
+  li li li:hover ul,
+  li li li.sfHover ul
+    left:     MENU_WIDTH
+    top:      0;
+
+  > li > a
+    font-size 19px
+    line-height HEADER_H
+    padding-left 30px
+ 
+  li 
+    color white
+
+  li ul
+    border 1px solid #444
+
+  li li
+    background #111
+    font-size 16px
+    height 30px
+    display block
+    line-height 30px
+    padding-left 15px    
+  
+  li:hover, .sf-menu li.sfHover,
+  a:focus, .sf-menu a:hover, .sf-menu a:active
+    background #63e
+    outline    0
+    color      white
+    cursor     hand
+    
+  /*** arrows **/
+  a.sf-with-ul
+    padding-right:   2.25em;
+
+.sf-sub-indicator
+  position   absolute
+  display    block
+  left       10px
+  // right      0.65em
+  width      10px
+  height     10px
+  text-indent -999em
+  overflow   hidden
+  background url('images/arrows-ffffff.png') no-repeat -10px -100px
+
+a > .sf-sub-indicator
+  top 1em
+  background-position 0 -100px
+
+/* apply hovers to modern browsers */
+a:focus > .sf-sub-indicator,
+a:hover > .sf-sub-indicator,
+a:active > .sf-sub-indicator,
+li:hover > a > .sf-sub-indicator,
+li.sfHover > a > .sf-sub-indicator {
+  background-position: -10px -100px; /* arrow hovers for modern browsers*/
+}
+
+/* point right for anchors in subs */
+.sf-menu ul .sf-sub-indicator
+  background-position:  -10px 0;
+
+.sf-menu ul a > .sf-sub-indicator
+  background-position:  0 0;
+
+/* apply hovers to modern browsers */
+.sf-menu ul a:focus > .sf-sub-indicator,
+.sf-menu ul a:hover > .sf-sub-indicator,
+.sf-menu ul a:active > .sf-sub-indicator,
+.sf-menu ul li:hover > a > .sf-sub-indicator,
+.sf-menu ul li.sfHover > a > .sf-sub-indicator
+  background-position: -10px 0; /* arrow hovers for modern browsers*/
+

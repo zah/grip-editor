@@ -1,0 +1,57 @@
+!!! strict
+html
+  head
+    title GRIP
+
+    link(rel= "stylesheet", type= "text/css", href="codemirror/lib/codemirror.css")
+    link(rel= "stylesheet", type= "text/css", href="grip.css")
+    
+    script(type="text/javascript", src= "jquery-1.7.2.js")
+    script(type="text/javascript", src= "jquery-ui.js")
+
+    script(type="text/javascript", src= "jquery.layout-latest.js")
+    script(type="text/javascript", src= "jquery.hoverIntent.js")
+    script(type="text/javascript", src= "jstree/jquery.jstree.js")
+
+    script(type="text/javascript", src= "superfish-1.4.8/js/superfish.js")
+    script(type="text/javascript", src= "mousetrap.js")
+
+    script(type="text/javascript", src= "codemirror/lib/codemirror.js")
+    script(type="text/javascript", src= "codemirror/mode/javascript/javascript.js")
+
+    script(type="text/javascript", src= "ace/build/src/ace.js", charset="utf-8")  
+    script(type="text/javascript", src= "grip.js")
+
+body
+  #header
+    ul#menu.sf-menu
+      li
+        a Grip
+        ul
+          li.cmd New Project
+          li.cmd About
+          li.cmd Exit
+      li
+        a Project
+        ul
+          li.cmd Debug
+          li.cmd Profile
+          li.cmd Package
+    #console
+      input
+    #tools
+    #winBtns
+   
+  #tabbar
+    ul
+      li.active Project.g
+      li MessageBox.g
+
+  #mainarea
+    .ui-layout-west
+      #projectTree
+    .ui-layout-center
+      #editor      
+ 
+  #statusbar
+

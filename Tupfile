@@ -1,0 +1,5 @@
+include_rules
+: foreach *.jade |> !jade |>
+: foreach *.styl |> !stylus |>
+: foreach *.coffee |> !coffee |>
+

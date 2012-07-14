@@ -1,0 +1,4 @@
+!stylus = |> stylus < %f > %o |> %B.css
+!coffee = |> coffee -c %f |> %B.js
+!jade = |> jade %f |> %B.html
+
