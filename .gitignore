@@ -2,3 +2,7 @@
 
 images/
 
+*.html
+*.css
+*.js
+

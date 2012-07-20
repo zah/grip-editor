@@ -1,7 +1,7 @@
 if typeof appshell != 'undefined'
-  shell = appshell
+  grip = appshell
 else
-  shell =
+  grip =
     fs:
       showOpenDialog: (a, b, c, d, e, callback) ->
         callback(null, "main.g")
@@ -104,13 +104,19 @@ $ ->
     ed.setValue code
 
   else
+    counter = 1
     ed = CodeMirror ((cm) -> $("#editor").replaceWith(cm); cm.setAttribute("id", "editor")),
       value: code
       mode:  "grip"
       lineNumbers: true
       lineWrapping: true
       extraKeys:
-        F5: -> window.location.reload true
+        F5: ->
+          window.location.reload true
+        
+        F7: ->
+          grip.parse "parse test", (err, parsed) ->
+            ed.setValue ("text was " + parsed.toString())
     
     gutter = ed.getGutterElement()
     $tabbar = $("#tabbar ul")
@@ -134,7 +140,7 @@ $ ->
 
   ed.refresh()
 
-  fs = shell.fs
+  fs = grip.fs
   
   Commands =
     'New Project': ->
